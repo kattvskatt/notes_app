@@ -1,0 +1,31 @@
+{% extends 'note/base.html' %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+
+<ul class="list-notes">
+	{% for note in notes %}
+			<li><div class="note-panel">
+	<p class="first">Категория: {{note.category}}</p>
+	<p class="last">Дата: {{note.time_update|date:"d.m.Y"}} Время: {{note.time_update|time:"H:i"}}</p>
+</div>
+{% if note.image %}
+	<p><img class="img-note-right thumb" src="{{note.image.url}}"></p>
+{% endif %}
+				<h2>{{note.title}}</h2>
+	{% autoescape on %}
+	{{note.content|linebreaks|truncatewords:30}}
+	{% endautoescape %}
+			<div class="clear"></div>
+			<p class="link-read-note"><a href="{{ note.get_absolute_url }}">Подробнее</a></p>
+			</li>
+	{% endfor %}
+</ul>
+
+{% else %}
+		<h1 id="regneed">Для просмотра и добавления заметок необходимо<br/>
+			<a href="{% url 'registration' %}">зарегистрироваться</a> | <a href="{% url 'login' %}">авторизоваться</a></h1>
+{% endif %}
+
+{% endblock %}

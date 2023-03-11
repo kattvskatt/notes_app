@@ -1,0 +1,14 @@
+{% extends 'note/base.html' %}
+
+{% block content %}
+<a href="{% url 'edit_note' note.slug %}"><button>Редактировать</button></a>
+<a href="{% url 'delete_note' note.slug %}"><button class="del-button">Удалить</button></a>
+
+<h1>{{note.title}}</h1>
+
+{% if note.image %}
+<p><img class="img-note-right" src="{{note.image.url}}"></p>
+{% endif %}
+
+{{note.content|linebreaks}}
+{% endblock %}

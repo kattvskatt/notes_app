@@ -1,0 +1,16 @@
+{% extends 'note/base.html'%}
+
+{% block content %}
+<div class="center">
+	<form method="post" class="card">
+		{% csrf_token %}
+		<h2> Удаление заметки </h2>
+		<p>Вы уверены, что хотите удалить заметку "{{note.title}}"?</p>
+		<p class="form-buttons">
+			<input type="submit" class="btn btn-primary" value="Удалить">
+			<a href="{% url 'note' note.slug %}" class="btn btn-outline">Отмена</a>
+		</p>
+	</form>
+</div>
+
+{%endblock content%}

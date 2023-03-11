@@ -1,0 +1,42 @@
+[
+{
+  "model": "note.category",
+  "pk": 1,
+  "fields": {
+    "name": "Личное",
+    "slug": "lichnoe"
+  }
+},
+{
+  "model": "note.category",
+  "pk": 2,
+  "fields": {
+    "name": "Здоровье",
+    "slug": "zdorove"
+  }
+},
+{
+  "model": "note.category",
+  "pk": 3,
+  "fields": {
+    "name": "Еда",
+    "slug": "eda"
+  }
+},
+{
+  "model": "note.category",
+  "pk": 4,
+  "fields": {
+    "name": "Хобби",
+    "slug": "hobbi"
+  }
+},
+{
+  "model": "note.category",
+  "pk": 5,
+  "fields": {
+    "name": "Другое",
+    "slug": "drugoe"
+  }
+}
+]
